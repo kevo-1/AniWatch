@@ -23,7 +23,8 @@ class StorageMan:
                 status=iter["Status"],
                 genres=iter["Genres"],
                 cover=iter["Cover"],
-                current=State[iter["Current"]]
+                current=State[iter["Current"]],
+                anitype=iter["AniType"]
             )
             aniList.AddAnime(anime = anime)
 
@@ -35,7 +36,8 @@ class StorageMan:
                 "Status": anime.Status,
                 "Genres": anime.Genres,
                 "Cover": anime.Cover,
-                "Current": anime.Current.name
+                "Current": anime.Current.name,
+                "AniType": anime.AniType
             }
             for anime in aniList.WatchList
         ]

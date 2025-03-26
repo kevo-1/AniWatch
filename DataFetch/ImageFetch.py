@@ -13,6 +13,7 @@ def GetImage(anime: Anime):
     SaveAs = os.path.join(DefaultPath, f'{SanitizedTitle}.jpg')
 
     if CheckDownloads(anime.Title):
+        logger.info("Cover Image already downloaded")
         return SaveAs
     else:
         try:
