@@ -24,5 +24,17 @@
         ],
         "Cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx97940-O2LWFOG8bK1u.jpg",
         "Current": "Completed"
+    },
+    {
+        "Title": "The Rising of the Shield Hero",
+        "NumberEp": 25,
+        "Status": "FINISHED",
+        "Genres": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+        ],
+        "Cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx99263-SJSk5d6mhQZO.jpg",
+        "Current": "Planned"
     }
 ]
