@@ -1,0 +1,28 @@
+[
+    {
+        "Title": "Dr. STONE",
+        "NumberEp": 24,
+        "Status": "FINISHED",
+        "Genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Sci-Fi"
+        ],
+        "Cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx105333-02NGkx1vey2C.jpg",
+        "Current": "Completed"
+    },
+    {
+        "Title": "Black Clover",
+        "NumberEp": 170,
+        "Status": "FINISHED",
+        "Genres": [
+            "Action",
+            "Adventure",
+            "Comedy",
+            "Fantasy"
+        ],
+        "Cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx97940-O2LWFOG8bK1u.jpg",
+        "Current": "Completed"
+    }
+]
