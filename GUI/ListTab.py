@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QFrame, QLabel, QVBoxLayout, QHBoxLayout, QPushButton, QComboBox, QGridLayout, QApplication, QWidget, QScrollArea
+from PyQt5.QtWidgets import QFrame, QLabel, QVBoxLayout, QHBoxLayout, QPushButton, QComboBox, QGridLayout, QApplication, QWidget, QLineEdit, QScrollArea
 from PyQt5.QtGui import QPixmap, QFont
 from PyQt5.QtCore import Qt, QSize
 
@@ -12,6 +12,66 @@ class ListTab(QWidget):
         super().__init__()
         layout = QVBoxLayout()
 
+        toolBoxLayout = QHBoxLayout()
+        toolBoxLayout.setAlignment(Qt.AlignCenter)
+
+        self.SearchBar = QLineEdit()
+        self.SearchBar.setPlaceholderText("Search...")
+        self.SearchBar.setFixedSize(QSize(1000,40))
+        self.SearchBar.setStyleSheet("""
+            QLineEdit {
+                font-size: 16px;
+                padding: 5px;
+                border-radius: 4px;
+                background-color: #DEE0E0;
+                color: dark-gray;
+            }
+        """)
+
+        self.SearchButton = QPushButton("Search")
+        self.SearchButton.clicked.connect(self.SearchAnime)
+        self.SearchButton.setStyleSheet("""
+            QPushButton {
+                font-size: 16px;
+                padding: 10px;
+                border-radius: 4px;
+                background-color: #DEE0E0;
+            } QPushButton::Hover {
+                background-color: #b4b8b8;
+            }
+        """)
+
+        self.FilterButton = QPushButton("Filter")
+        self.FilterButton.setStyleSheet("""
+            QPushButton {
+                font-size: 16px;
+                padding: 10px;
+                border-radius: 4px;
+                background-color: #DEE0E0;
+            } QPushButton::Hover {
+                background-color: #b4b8b8;
+            }
+        """)
+
+        self.ResetButton = QPushButton("Reset")
+        self.ResetButton.clicked.connect(self.ResetCards)
+        self.ResetButton.setStyleSheet("""
+            QPushButton {
+                font-size: 16px;
+                padding: 10px;
+                border-radius: 4px;
+                background-color: #DEE0E0;
+            } QPushButton::Hover {
+                background-color: #b4b8b8;
+            }
+        """)
+
+
+        toolBoxLayout.addWidget(self.SearchBar)
+        toolBoxLayout.addWidget(self.SearchButton)
+        toolBoxLayout.addWidget(self.FilterButton)
+        toolBoxLayout.addWidget(self.ResetButton)
+
         # Create scroll area
         scrollArea = QScrollArea(self)
         scrollArea.setWidgetResizable(True)
@@ -20,6 +80,15 @@ class ListTab(QWidget):
         self.container = QWidget()
         self.container_layout = QGridLayout()
         self.container_layout.setSpacing(15)
+
+        self.NotFoundLabel = QLabel("No Anime Found...")
+        self.NotFoundLabel.setAlignment(Qt.AlignCenter)
+        self.NotFoundLabel.setStyleSheet("""
+            QLabel {
+                font-size: 30px;
+                color: gray;
+            }
+        """)
 
         # Load anime list
         self.StoreMan = StorageMan()
@@ -39,6 +108,7 @@ class ListTab(QWidget):
         self.container.setLayout(self.container_layout)
         scrollArea.setWidget(self.container)
 
+        layout.addLayout(toolBoxLayout)
         layout.addWidget(scrollArea)
         self.setLayout(layout)
 
@@ -54,6 +124,45 @@ class ListTab(QWidget):
             row = index // columns
             col = index % columns
             self.container_layout.addWidget(card, row, col)
+
+        self.container.updateGeometry()
+
+    def ResetCards(self):
+        self.SearchBar.setText("")
+        while self.container_layout.count():
+            item = self.container_layout.takeAt(0)
+            if item.widget():
+                item.widget().setParent(None)
+
+        columns = 2
+        for index, card in enumerate(self.loadedCards):
+            row = index // columns
+            col = index % columns
+            self.container_layout.addWidget(card, row, col)
+
+        if self.NotFoundLabel in [self.container_layout.itemAt(i).widget() for i in range(self.container_layout.count())]:
+            self.container_layout.removeWidget(self.NotFoundLabel)
+            self.NotFoundLabel.setParent(None)
+
+        self.container.updateGeometry()
+
+
+    def SearchAnime(self):
+        search_text = self.SearchBar.text().strip().lower()
+
+        while self.container_layout.count():
+            item = self.container_layout.takeAt(0)
+            if item.widget():
+                item.widget().setParent(None)
+        results = [card for card in self.loadedCards if search_text in card.anime.Title.lower()]
+        if len(results) > 0:
+            columns = 2
+            for index, card in enumerate(results):
+                row = index // columns
+                col = index % columns
+                self.container_layout.addWidget(card, row, col)
+        else:
+            self.container_layout.addWidget(self.NotFoundLabel)
 
         self.container.updateGeometry()
 

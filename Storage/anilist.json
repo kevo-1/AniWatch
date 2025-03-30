@@ -13,21 +13,6 @@
         "AniType": "MOVIE"
     },
     {
-        "Title": "Code Geass: Lelouch of the Rebellion",
-        "NumberEp": 25,
-        "Status": "FINISHED",
-        "Genres": [
-            "Action",
-            "Drama",
-            "Mecha",
-            "Sci-Fi",
-            "Thriller"
-        ],
-        "Cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx1575-dG7vMMZMF3wk.jpg",
-        "Current": "Planned",
-        "AniType": "TV"
-    },
-    {
         "Title": "Code Geass: Fukkatsu no Lelouch Picture Drama - Re;f 103.00 ~ Shinkai no Kakera",
         "NumberEp": 2,
         "Status": "FINISHED",
