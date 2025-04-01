@@ -1,18 +1,5 @@
 [
     {
-        "Title": "Solo Leveling -ReAwakening-",
-        "NumberEp": 1,
-        "Status": "FINISHED",
-        "Genres": [
-            "Action",
-            "Adventure",
-            "Fantasy"
-        ],
-        "Cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx184694-EmVoCuV4uAGv.png",
-        "Current": "Planned",
-        "AniType": "MOVIE"
-    },
-    {
         "Title": "Code Geass: Fukkatsu no Lelouch Picture Drama - Re;f 103.00 ~ Shinkai no Kakera",
         "NumberEp": 2,
         "Status": "FINISHED",
@@ -22,6 +9,88 @@
         "Cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b117408-lUXNsh9BnIPO.jpg",
         "Current": "Planned",
         "AniType": "SPECIAL"
+    },
+    {
+        "Title": "Code Geass: Hangyaku no Lelouch DVD Magazine",
+        "NumberEp": 10,
+        "Status": "FINISHED",
+        "Genres": [
+            "Comedy"
+        ],
+        "Cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b126169-H7bkp7C91o9X.jpg",
+        "Current": "Planned",
+        "AniType": "SPECIAL"
+    },
+    {
+        "Title": "Code Geass: Lelouch of the Rebellion R2",
+        "NumberEp": 25,
+        "Status": "FINISHED",
+        "Genres": [
+            "Action",
+            "Drama",
+            "Mecha",
+            "Sci-Fi",
+            "Thriller"
+        ],
+        "Cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx2904-Z6DhLHr1XWEH.jpg",
+        "Current": "Planned",
+        "AniType": "TV"
+    },
+    {
+        "Title": "Code Geass: Lelouch of the Re;surrection",
+        "NumberEp": 1,
+        "Status": "FINISHED",
+        "Genres": [
+            "Action",
+            "Drama",
+            "Mecha",
+            "Sci-Fi"
+        ],
+        "Cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx97880-sZWHViJfrvXm.jpg",
+        "Current": "Planned",
+        "AniType": "MOVIE"
+    },
+    {
+        "Title": "Code Geass: Roz\u00e9 of the Recapture",
+        "NumberEp": 12,
+        "Status": "FINISHED",
+        "Genres": [
+            "Action",
+            "Drama",
+            "Mecha",
+            "Sci-Fi",
+            "Thriller"
+        ],
+        "Cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx126830-Mx56p5DMIjiq.png",
+        "Current": "Planned",
+        "AniType": "ONA"
+    },
+    {
+        "Title": "Code Geass: Lelouch of the Rebellion",
+        "NumberEp": 25,
+        "Status": "FINISHED",
+        "Genres": [
+            "Action",
+            "Drama",
+            "Mecha",
+            "Sci-Fi",
+            "Thriller"
+        ],
+        "Cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx1575-UhTqGFeEcL9O.png",
+        "Current": "Planned",
+        "AniType": "TV"
+    },
+    {
+        "Title": "Code Geass: Nunnally in Wonderland",
+        "NumberEp": 1,
+        "Status": "FINISHED",
+        "Genres": [
+            "Comedy",
+            "Fantasy"
+        ],
+        "Cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx12685-IfZqKrKbkb1p.png",
+        "Current": "Planned",
+        "AniType": "OVA"
     },
     {
         "Title": "Code Geass: Lelouch of the Rebellion I - Initiation",
@@ -35,6 +104,34 @@
             "Thriller"
         ],
         "Cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101811-pRfRiEvgZn4T.png",
+        "Current": "Planned",
+        "AniType": "MOVIE"
+    },
+    {
+        "Title": "Code Geass: Hangyaku no Lelouch Picture Drama",
+        "NumberEp": 9,
+        "Status": "FINISHED",
+        "Genres": [
+            "Comedy",
+            "Ecchi",
+            "Slice of Life"
+        ],
+        "Cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/1953.jpg",
+        "Current": "Planned",
+        "AniType": "SPECIAL"
+    },
+    {
+        "Title": "Code Geass: Lelouch of the Rebellion II - Transgression",
+        "NumberEp": 1,
+        "Status": "FINISHED",
+        "Genres": [
+            "Action",
+            "Drama",
+            "Mecha",
+            "Sci-Fi",
+            "Thriller"
+        ],
+        "Cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101812-rCTRQhzHIryT.jpg",
         "Current": "Planned",
         "AniType": "MOVIE"
     }

@@ -19,7 +19,7 @@ class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle('AniWatchList')
-        self.setWindowIcon(QIcon(QPixmap('D:/Projects/AniWatch/Utilities/AniWatchList.png')))
+        self.setWindowIcon(QIcon(QPixmap('D:/Projects/AniWatch/Utilities/logo.png')))
         self.setFixedSize(QSize(1500, 800))
 
         if sys.platform.startswith("win"):
@@ -63,7 +63,7 @@ class MainWindow(QWidget):
             self.rpc.update(
                 state=state_text,
                 details=details_text,
-                large_image="anilist_icon",
+                large_image="logo",
                 large_text="AniWatchList",
                 start=int(time.time())
             )

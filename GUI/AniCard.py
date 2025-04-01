@@ -6,6 +6,14 @@ from Entities.Anime import Anime
 from Entities.State import State
 from DataFetch.ImageFetch import GetImage
 
+class NoScrollComboBox(QComboBox):
+    def __init__(self):
+        super().__init__()
+    
+    def wheelEvent(self, e):
+        e.ignore()
+
+
 class AniCard(QFrame):
     remove_signal = pyqtSignal(object)
     def __init__(self, anime: Anime):
@@ -83,13 +91,16 @@ class AniCard(QFrame):
         StatusLabel = QLabel(f"{anime.Status.capitalize()}")
         StatusLabel.setFont(font)
         StatusLabel.setFixedWidth(250)
-        CurrentStateLabel = QComboBox()
+        CurrentStateLabel = NoScrollComboBox()
         CurrentStateLabel.setFont(font)
         for state in State:
             CurrentStateLabel.addItem(state.name)
         
         self.close_button = QPushButton("X")
         self.close_button.setFixedSize(30, 30)
+        closeFont = font
+        closeFont.setBold(True)
+        self.close_button.setFont(closeFont)
         self.close_button.setObjectName("CloseButton")
         self.close_button.clicked.connect(self.__RemoveAnime)
 

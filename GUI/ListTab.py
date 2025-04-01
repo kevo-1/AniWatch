@@ -75,6 +75,32 @@ class ListTab(QWidget):
         # Create scroll area
         scrollArea = QScrollArea(self)
         scrollArea.setWidgetResizable(True)
+        scrollArea.setStyleSheet("""
+            QScrollArea {
+                border: none;
+                border-radius: 10px;
+                background-color: #f5f5f5;
+            } QScrollBar:vertical {
+                border: none;
+                background: #d3d3d3;
+                width: 10px;
+                border-radius: 5px;
+                margin: 2px 0 2px 0;
+            } QScrollBar::handle:vertical, QScrollBar::handle:horizontal {
+                background: #888;
+                border-radius: 5px;
+            } QScrollBar::handle:vertical:hover, QScrollBar::handle:horizontal:hover {
+                background: #666;
+            } QScrollBar::sub-line, QScrollBar::add-line {
+                background: none;
+                border: none;
+            } QScrollBar::up-arrow, QScrollBar::down-arrow, 
+            QScrollBar::left-arrow, QScrollBar::right-arrow {
+                width: 0px;
+                height: 0px;
+            }
+        """)
+
 
         # Container for anime cards
         self.container = QWidget()
