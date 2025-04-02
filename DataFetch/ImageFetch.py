@@ -3,7 +3,7 @@ import requests
 from Entities.Anime import Anime
 from Utilities.Logger import logger
 
-DefaultPath = r'D:/Projects/AniWatch/Storage/AnimeCover/'
+DefaultPath = r'Storage/AnimeCover/'
 
 def sanitize_filename(name: str) -> str:
     return "".join(c if c.isalnum() or c in " _-" else "_" for c in name)

@@ -7,7 +7,7 @@ from Utilities.Logger import logger
 
 class StorageMan:
     def __init__(self):
-        self.ListPath = "D:/Projects/AniWatch/Storage/anilist.json"
+        self.ListPath = "Storage/anilist.json"
     
     def LoadList(self, aniList: AniList):
         try:

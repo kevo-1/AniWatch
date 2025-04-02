@@ -20,7 +20,7 @@ class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle('AniWatchList')
-        self.setWindowIcon(QIcon(QPixmap('D:/Projects/AniWatch/Utilities/logo.png')))
+        self.setWindowIcon(QIcon(QPixmap('Utilities/logo.png')))
         self.setFixedSize(QSize(1300, 800))
 
         if sys.platform.startswith("win"):
