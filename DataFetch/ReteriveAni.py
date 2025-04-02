@@ -5,11 +5,11 @@ from Utilities.Logger import logger
 
 url = "https://graphql.anilist.co"
 
-def _getAnimeData(title, limit=10):
+def _getAnimeData(title, limit=20):
     query = """
     query ($search: String, $limit: Int) {
         Page(perPage: $limit) {
-            media(search: $search, type: ANIME) {
+            media(search: $search, type: ANIME, isAdult: false){
                 title {
                     romaji
                     english
@@ -42,6 +42,8 @@ def _getAnimeData(title, limit=10):
         return None
 
     for media in Results:
+        if "Ecchi" in media.get("genres", []):
+            continue
         anime = Anime(
             title=media["title"].get("english") or media["title"].get("romaji"),
             numEp=media.get("episodes", 0),

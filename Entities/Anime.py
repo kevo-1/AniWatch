@@ -1,7 +1,7 @@
 from Entities.State import State
 
 class Anime():
-    def __init__(self, title: str, numEp: int, status: str, genres: dict, cover : str, current: State, anitype: str):
+    def __init__(self, title: str, numEp: int, status: str, genres: list, cover : str, current: State, anitype: str):
         self.Title = title
         self.NumberEp = numEp
         self.Status = status

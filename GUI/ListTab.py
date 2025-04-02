@@ -6,14 +6,21 @@ from Storage.StorageManager import StorageMan
 from Storage.AniList import AniList
 from Entities.Anime import Anime
 from GUI.AniCard import AniCard
+from GUI.Notification import Notification
 
 class ListTab(QWidget):
-    def __init__(self):
+    def __init__(self, anilist: AniList, storageMan: StorageMan):
         super().__init__()
         layout = QVBoxLayout()
 
         toolBoxLayout = QHBoxLayout()
         toolBoxLayout.setAlignment(Qt.AlignCenter)
+
+        self.anilist = anilist
+        self.storageMan = storageMan
+
+        self.notification = Notification(self)
+        self.notification.hide()
 
         self.SearchBar = QLineEdit()
         self.SearchBar.setPlaceholderText("Search...")
@@ -72,7 +79,6 @@ class ListTab(QWidget):
         toolBoxLayout.addWidget(self.FilterButton)
         toolBoxLayout.addWidget(self.ResetButton)
 
-        # Create scroll area
         scrollArea = QScrollArea(self)
         scrollArea.setWidgetResizable(True)
         scrollArea.setStyleSheet("""
@@ -116,13 +122,8 @@ class ListTab(QWidget):
             }
         """)
 
-        # Load anime list
-        self.StoreMan = StorageMan()
-        self.anilis = AniList()
-        self.StoreMan.LoadList(aniList=self.anilis)
-
         # Create AniCards and add them to the grid
-        self.loadedCards = [AniCard(card) for card in self.anilis.WatchList]
+        self.loadedCards = [AniCard(card) for card in anilist.WatchList]
 
         columns = 2
         for index, card in enumerate(self.loadedCards):
@@ -142,8 +143,8 @@ class ListTab(QWidget):
         self.container_layout.removeWidget(card)
         card.deleteLater()
         self.loadedCards.remove(card)
-        self.anilis.RemoveAnime(card.anime)
-        self.StoreMan.SaveList(self.anilis)
+        self.anilist.RemoveAnime(card.anime)
+        self.storageMan.SaveList(self.anilist)
 
         columns = 2
         for index, card in enumerate(self.loadedCards):
@@ -192,3 +193,15 @@ class ListTab(QWidget):
 
         self.container.updateGeometry()
 
+
+    def AddAnimeToList(self, anime: Anime):
+        if anime not in self.anilist.WatchList:
+            self.anilist.AddAnime(anime)
+            self.storageMan.SaveList(self.anilist)
+            new_card = AniCard(anime)
+            new_card.remove_signal.connect(self.__RemoveAnime)
+            self.loadedCards.append(new_card)
+            self.ResetCards()
+            self.notification.ShowNotification(f"Added {anime.Title}")
+        else:
+            self.notification.ShowNotification(f"{anime.Title} is already in your list")
