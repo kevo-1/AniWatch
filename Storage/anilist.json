@@ -42,16 +42,46 @@
         "AniType": "TV"
     },
     {
-        "Title": "Fire Force Season 3 Part 2",
-        "NumberEp": null,
-        "Status": "NOT_YET_RELEASED",
+        "Title": "Demon Slayer: Kimetsu no Yaiba",
+        "NumberEp": 26,
+        "Status": "FINISHED",
+        "Genres": [
+            "Action",
+            "Adventure",
+            "Drama",
+            "Fantasy",
+            "Supernatural"
+        ],
+        "Cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx101922-WBsBl0ClmgYL.jpg",
+        "Current": "Planned",
+        "AniType": "TV"
+    },
+    {
+        "Title": "Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc",
+        "NumberEp": 11,
+        "Status": "FINISHED",
+        "Genres": [
+            "Action",
+            "Adventure",
+            "Drama",
+            "Fantasy",
+            "Supernatural"
+        ],
+        "Cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx145139-rRimpHGWLhym.png",
+        "Current": "Planned",
+        "AniType": "TV"
+    },
+    {
+        "Title": "Attack on Titan",
+        "NumberEp": 25,
+        "Status": "FINISHED",
         "Genres": [
             "Action",
             "Drama",
-            "Sci-Fi",
-            "Supernatural"
+            "Fantasy",
+            "Mystery"
         ],
-        "Cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx179062-ICa4Z8V0ggJI.jpg",
+        "Cover": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx16498-84C9x4NmXwLI.png",
         "Current": "Planned",
         "AniType": "TV"
     }

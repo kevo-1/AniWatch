@@ -114,12 +114,10 @@ class MainWindow(QWidget):
             except Exception as e:
                 print(f"RPC close error: {e}")
         event.accept()
+        self.StoreMan.CleanCovers(self.anilis)
 
 def run():
     app = QApplication(sys.argv)
     window = MainWindow()
     window.show()
     sys.exit(app.exec_())
-
-if __name__ == '__main__':
-    run()
