@@ -5,8 +5,8 @@
   
   A simple GUI to search and track anime using AniList's API with Discord Rich Presence support.
   
-  [![Python](https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white)](#)
-  [![PyQt5 Version](https://img.shields.io/badge/PyQt-5.15.9-41CD52)](https://pypi.org/project/PyQt5/)
+  <img src="https://img.shields.io/badge/-Python-3776AB?logo=Python&logoColor=white&style=flat">
+  <img src="https://img.shields.io/badge/-Qt-41CD52?logo=qt&logoColor=white&style=flat">
 </div>
 
 ## Requirements:
